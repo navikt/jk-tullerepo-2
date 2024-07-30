@@ -24,10 +24,7 @@ jobs:
           git config --global user.name "unimportant"
           git clone https://github.com/navikt/jk-tullerepo-1
           cd jk-tullerepo-1
-          echo "app-2 was here @ $(date)" >thefile
-          git add thefile 
-          git commit -m "did a thing"
-          git push "https://whatever:$GITHUB_TOKEN@github.com/navikt/jk-tullerepo-1"
+          gh issue create --title "I found a bug" --body "Nothing works"
         env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
           GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
