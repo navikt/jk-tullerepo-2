@@ -24,3 +24,5 @@ jobs:
           echo "app-2 was here @ $(date)" >thefile
           git add thefile 
           git commit -m "did a thing"
+        env:
+          GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
