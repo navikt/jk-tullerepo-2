@@ -13,7 +13,7 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: octo-sts/action@v1
+      - uses: octo-sts/action@v1.0.0
         id: octo-sts
         with: 
           scope: navikt/jk-tullerepo-1
