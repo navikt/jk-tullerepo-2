@@ -20,14 +20,14 @@ jobs:
           scope: navikt/jk-tullerepo-1
           identity: jk-tullerepo-2
       - run: |
-          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "whatever@users.noreply.github.com"
+          git config --global user.name "mportant$unimportant"
           git clone https://github.com/navikt/jk-tullerepo-1
           cd jk-tullerepo-1
           echo "app-2 was here @ $(date)" >thefile
           git add thefile 
           git commit -m "did a thing"
-          git push "https://$COMMIT_AUTHOR:$GITHUB_TOKEN@github.com/navikt/jk-tullerepo-1"
+          git push "https://:$GITHUB_TOKEN@github.com/navikt/jk-tullerepo-1"
         env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
           GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
