@@ -1,0 +1,26 @@
+name: Do stuff
+
+on:
+  push:
+    branches:
+      - main
+  workflow-dispatch:
+
+jobs:
+  build:
+    name: Perform the thing
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: octo-sts/action@v1
+        id: octo-sts
+        with: 
+          scope: navikt/jk-tullerepo-1
+          identity: jk-tulleapp-2
+      - run: |
+          git checkout https://github.com/navikt/jk-tullerepo-1
+          cd jk-tullerepo-1
+          echo "app-2 was here @ $(date)" >thefile
+          git add thefile 
+          git commit -m "did a thing"
