@@ -20,6 +20,7 @@ jobs:
           scope: navikt/jk-tullerepo-1
           identity: jk-tullerepo-2
       - run: |
+          echo "sup?"
           echo "2 $GITHUB_ACTOR"
           echo "3 ${{ GITHUB_ACTOR }}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
