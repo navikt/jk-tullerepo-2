@@ -20,13 +20,14 @@ jobs:
           scope: navikt/jk-tullerepo-1
           identity: jk-tullerepo-2
       - run: |
-          git config --global user.email "yolo@nav.no"
-          git config --global user.name "The Yolo Master"
+          git config --global user.email "${{ env.CI_COMMIT_AUTHOR }}@users.noreply.github.com"
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git clone https://github.com/navikt/jk-tullerepo-1
           cd jk-tullerepo-1
           echo "app-2 was here @ $(date)" >thefile
           git add thefile 
           git commit -m "did a thing"
-          git push
+          git push "https://$COMMIT_AUTHOR:$GITHUB_TOKEN@github.com/navikt/jk-tullerepo-1"
         env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          COMMIT_AUTHOR: Continuous Integration
