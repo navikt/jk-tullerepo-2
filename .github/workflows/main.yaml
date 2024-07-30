@@ -13,6 +13,7 @@ jobs:
     permissions:
       id-token: write
     steps:
+      - uses: actions/checkout@v4
       - uses: octo-sts/action@v1.0.0
         id: octo-sts
         with: 
