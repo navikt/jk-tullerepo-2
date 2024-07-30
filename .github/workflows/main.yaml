@@ -17,7 +17,7 @@ jobs:
         id: octo-sts
         with: 
           scope: navikt/jk-tullerepo-1
-          identity: jk-tulleapp-2
+          identity: jk-tullerepo-2
       - run: |
           git checkout https://github.com/navikt/jk-tullerepo-1
           cd jk-tullerepo-1
