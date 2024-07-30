@@ -20,7 +20,7 @@ jobs:
           scope: navikt/jk-tullerepo-1
           identity: jk-tullerepo-2
       - run: |
-          git checkout https://github.com/navikt/jk-tullerepo-1.git
+          git clone https://github.com/navikt/jk-tullerepo-1
           cd jk-tullerepo-1
           echo "app-2 was here @ $(date)" >thefile
           git add thefile 
