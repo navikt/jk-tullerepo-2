@@ -33,3 +33,4 @@ jobs:
           git push "https://$COMMIT_AUTHOR:$GITHUB_TOKEN@github.com/navikt/jk-tullerepo-1"
         env:
           GITHUB_TOKEN: ${{ steps.octo-sts.outputs.token }}
+          GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
